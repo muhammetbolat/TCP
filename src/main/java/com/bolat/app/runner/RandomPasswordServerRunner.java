@@ -17,11 +17,20 @@ public class RandomPasswordServerRunner implements ApplicationRunner {
     private final ServerSocket serverSocket;
     private final ExecutorService threadPool;
 
-    private void acceptClient() throws IOException {
-        System.out.println("Random password generator server is waiting for a client");
-        Socket socket = serverSocket.accept();
+    private void handleClient(Socket socket) {
+        threadPool.execute(() -> generatePassword(socket));
+    }
+
+    private void generatePassword(Socket socket) {
         System.out.format("Host: %s, Port: %s, Local Port: %s%n", socket.getInetAddress().getHostAddress(),
                 socket.getPort(), socket.getLocalPort());
+
+    }
+    private void acceptClient() throws IOException {
+        System.out.println("Random password generator server is waiting for a client");
+
+        handleClient(serverSocket.accept());
+
     }
 
     private void runForAccept() {
