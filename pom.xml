@@ -48,7 +48,11 @@
 			<artifactId>org-csystem-util-console</artifactId>
 			<version>1.0.0</version>
 		</dependency>
-
+		<dependency>
+			<groupId>org.csystem</groupId>
+			<artifactId>org-csystem-util</artifactId>
+			<version>3.0.0</version>
+		</dependency>
 		<dependency>
 			<groupId>org.csystem</groupId>
 			<artifactId>org-csystem-util-exception</artifactId>

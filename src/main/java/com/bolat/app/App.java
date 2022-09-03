@@ -1,4 +1,4 @@
-package org.csystem.app;
+package com.bolat.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
